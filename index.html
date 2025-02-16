@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    html, body, iframe {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+      border: none;
+      overflow: hidden;
+      background-color: black;
+    }
+  </style>
+</head>
+<body>
+  <iframe
+    id="thisIframe"
+    src="https://www.youtube.com/embed/jzD_yyEcp0M?rel=0&enablejsapi=1&playsinline=1&showInfo=0&controls=1&fullscreen=1"
+    allowfullscreen>
+  </iframe>
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const iframe = document.getElementById('thisIframe');
+    iframe.src = `https://www.youtube.com/embed/${urlParams.get('id')}?rel=0&enablejsapi=1&playsinline=1&showInfo=0&controls=1&fullscreen=1`;
+  </script>
+</body>
+</html>
